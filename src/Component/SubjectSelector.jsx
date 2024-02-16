@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import cseSubjects from './Dept/CseSubjects';
 import { useParams } from 'react-router-dom';
-import {Table,Container} from 'react-bootstrap';
+import { Table, Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const SubjectSelector = () => {
@@ -9,10 +9,10 @@ const SubjectSelector = () => {
   const [semester, setSemester] = useState('');
   const [department, setDepartment] = useState('');
   const [selectedSubjects, setSelectedSubjects] = useState([]);
-  
+
   // Use the useParams hook to access URL parameters
   const { department: departmentParam } = useParams();
-  
+
   const handleSemesterChange = (event) => {
     setSemester(event.target.value);
     const departmentSubjects = getDepartmentSubjects();
@@ -35,7 +35,7 @@ const SubjectSelector = () => {
   };
 
   return (
-    <Container >
+    <Container>
       <label>Select Regulation:</label>
       <select value={regulation} onChange={(event) => setRegulation(event.target.value)}>
         <option value="">Select Regulation</option>
@@ -64,7 +64,7 @@ const SubjectSelector = () => {
           {selectedSubjects.map((subject, index) => (
             <tr key={index}>
               <td>{subject.code}</td>
-              <td>{subject.name}</td>
+              <td><a href={`/syllabus/${subject.code}`}>{subject.name}</a></td>
             </tr>
           ))}
         </tbody>
