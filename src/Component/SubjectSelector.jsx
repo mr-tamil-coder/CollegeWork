@@ -12,7 +12,6 @@ const SubjectSelector = () => {
 
   // Use the useParams hook to access URL parameters
   const { department: departmentParam } = useParams();
-
   const handleSemesterChange = (event) => {
     setSemester(event.target.value);
     const departmentSubjects = getDepartmentSubjects();
