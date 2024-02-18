@@ -6,7 +6,7 @@ import Header from "./Component/Header/Header"
 const Routing = () => {
   return (
   
-    <Router>
+<Router basename="/testingcollege.netlify.app">
     <div>
   
       <Routes>
