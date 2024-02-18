@@ -89,7 +89,7 @@ const SubjectSelector = () => {
                 <tr key={index}>
                   <td>{subject.code}</td>
                   <td>
-                    <a href={`/syllabus/${subject.code}${regulation}`}>
+                    <a href={`/syllabus/${subject.code}${regulation}`} target="_blank">
                       {subject.name}
                     </a>
                   </td>

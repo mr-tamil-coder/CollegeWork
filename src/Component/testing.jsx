@@ -76,16 +76,16 @@ const syllabusData = {
     and Legendre’s type – System of simultaneous first order linear differential equations with 
     constant coefficients.
 `,
-// Add more syllabus content for other subject codes as needed
+  // Add more syllabus content for other subject codes as needed
 };
 
 const Testing = () => {
   const { subjectCode } = useParams();
   const syllabus = syllabusData[subjectCode];
-
+  const subject = subjectCode.slice(0, 7);
   return (
     <div>
-      <h2>Syllabus for {subjectCode}</h2>
+      <h2>Syllabus for {subject}</h2>
       <pre>
         <div dangerouslySetInnerHTML={{ __html: syllabus }}></div>
       </pre>
