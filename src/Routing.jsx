@@ -9,6 +9,8 @@ const Routing = () => {
       <div>
         <Routes>
           <Route path="/" element={<Header />} />
+          <Route path="/department" element={<SubjectSelector />} />
+
           <Route path="/department/:department" element={<SubjectSelector />} />
           <Route path="/syllabus/:subjectCode" element={<Testing />} />
         </Routes>
