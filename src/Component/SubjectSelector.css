@@ -1,34 +1,44 @@
 .subject-selector-container {
-    margin: 20px;
-  }
-  
-  .select-label {
-    font-size: 16px;
-    margin-right: 10px;
-  }
-  
-  .select-input {
-    width: 200px;
-    height: 30px;
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  
-  .subject-header {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .subject-table {
-    width: 100%;
-  }
-  
-  .subject-link {
-    text-decoration: none;
-    color: #007bff; /* Bootstrap primary color */
-  }
-  
-  .subject-link:hover {
-    text-decoration: underline;
-  }
-  
+  margin: 20px;
+}
+
+.select-label {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.select-input {
+  width: 200px;
+  height: 30px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.subject-header {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.subject-table {
+  width: 100%;
+}
+
+.subject-link {
+  text-decoration: none;
+  color: #007bff; /* Bootstrap primary color */
+}
+
+.subject-link:hover {
+  text-decoration: underline;
+}
+.banner {
+  width: 65%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+}

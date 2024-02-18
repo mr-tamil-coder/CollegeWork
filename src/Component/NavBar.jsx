@@ -8,12 +8,15 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
 import jceLogo from "../Assets/College Img/fav.png";
 import jceBanner from "../Assets/College Img/jce-logo.png";
+import "./SubjectSelector.css"
 function NavBar() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
         {/* Left-aligned logo */}
-        <Navbar.Brand href="#">
+        <Navbar.Brand href="#" className="banner">
+     
+
           {/* <img src={jceLogo} width="48px" height="48px" alt="" /> */}
           <img src={jceBanner} height="60px" alt="" />
         </Navbar.Brand>
