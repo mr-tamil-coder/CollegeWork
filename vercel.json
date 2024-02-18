@@ -1,0 +1,10 @@
+{
+    "routes": [
+      { "handle": "filesystem" },
+      { "src": "/department", "dest": "/department" },
+      { "src": "/department/:department", "dest": "/department/:department" },
+      { "src": "/syllabus/:subjectCode", "dest": "/syllabus/:subjectCode" },
+      { "src": ".*", "dest": "/" }
+    ]
+  }
+  
