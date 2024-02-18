@@ -27,22 +27,7 @@ function NavBar() {
             {/* Right-aligned navigation links */}
             <Nav.Link href="#home">Home</Nav.Link>
             {/* Department Choose with dropdown */}
-            <NavDropdown title="Department Choose" id="department-dropdown">
-              {/* Dropdown items for each department */}
-              <NavDropdown.Item href="/department/cse">CSE</NavDropdown.Item>
-              <NavDropdown.Item href="/department/it">IT</NavDropdown.Item>
-              <NavDropdown.Item href="/department/ece">ECE</NavDropdown.Item>
-              <NavDropdown.Item href="/department/eee">EEE</NavDropdown.Item>
-              <NavDropdown.Item href="/department/csbs">CSBS</NavDropdown.Item>
-              <NavDropdown.Item href="/department/eee">EEE</NavDropdown.Item>
-
-              {/* Dropdown items for each department */}
-              <NavDropdown.Item to="/cse">CSE</NavDropdown.Item>
-              <NavDropdown.Item to="/eee">EEE</NavDropdown.Item>
-              {/* <NavDropdown.Item >
-              <Link to="/department/eee">Contact</Link>
-              </NavDropdown.Item> */}
-            </NavDropdown>
+          
             <Nav.Link href="#contact">Contact Us</Nav.Link>
             <Nav.Link href="#about">About Us</Nav.Link>
           </Nav>
