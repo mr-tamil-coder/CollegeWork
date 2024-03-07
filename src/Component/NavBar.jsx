@@ -6,8 +6,8 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
-import jceLogo from "../Assets/College Img/fav.png";
-import jceBanner from "../Assets/College Img/jce-logo.png";
+import jceLogo from "../Assets/College-Img/fav.png";
+import jceBanner from "../Assets/College-Img/jce-logo.png";
 import "./SubjectSelector.css"
 function NavBar() {
   return (

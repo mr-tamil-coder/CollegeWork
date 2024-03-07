@@ -1,9 +1,11 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-
+import "./SubjectSelector.css";
+import { Link } from "react-router-dom";
 const syllabusData = {
   JHS11212019: `
-    <strong style="color: black">UNIT I Basic Grammar I and Reading for information:</strong> 
+   <div  className="content bg-primary">
+   <strong style="color: black">UNIT I Basic Grammar I and Reading for information:</strong> 
       - Parts of speech - Sentence patterns – Tenses - Wh- questions - Yes/no questions - Countable 
       and Uncountable nouns - Affixation – word formation; Reading short comprehension 
       passages - practice in skimming and scanning for specific information and note-making, 
@@ -14,8 +16,8 @@ const syllabusData = {
       - Listening to documentaries, inspiring speeches of great leaders, news bulletins, Ted talks, 
       telephonic conversations 
     
-<br>
-<br>
+      <br>
+      <br>
 
     <strong style="color: black">UNIT II Basic Grammar I and Sharing Information:</strong> 
       - Pronouns - Adjectives - Adverbs - Imperatives - Direct and indirect questions - Compound 
@@ -59,8 +61,7 @@ const syllabusData = {
       - Creative writing and speaking skills: Poster making and description, project proposals
       <br>
       <br>
-
-
+   </div>
   `,
   JMA11012019: `
   <strong style="color: black">UNIT I MATRICES:</strong>
@@ -209,7 +210,7 @@ reference–Command Line Argument in C-- Recursion - Enumerators – Structures
 Macros - storage classes - Pointers- Definition – Initialization – Pointers arithmetic – 
 Double Pointers, Basic file operations-Example problems.
 `,
-JCY11012019: `
+  JCY11012019: `
 <h2 style="color: black">ENGINEERING CHEMISTRY</h2> 
 
 
@@ -267,7 +268,7 @@ materials; Synthesis: precipitation, thermolysis, hydrothermal, solvothermal,
 electrodeposition, chemical vapour deposition, laser ablation; Properties and applications. 
 `,
 
-JGE11122019: `
+  JGE11122019: `
 <h2 style="color: black">Programming in C Laboratory</h2> 
 <br />
 <strong style="color: black">LIST OF PROGRAMS:</strong> <br />
@@ -383,16 +384,33 @@ Demonstration on:
 `,
 
   // Add more syllabus content for other subject codes as needed
-};
 
+  //
+};
+import Sem from "./Syllabus/CseSyllabus/Sem";
 const Testing = () => {
-  const { subjectCode } = useParams();
-  const syllabus = syllabusData[subjectCode];
+  const { subjectCode, department, semester } = useParams();
+
+  console.log("he");
+  console.log(useParams());
+
+  var syllabus = syllabusData[subjectCode];
+  syllabus = <Sem semm={semester} />;
+
   const subject = subjectCode.slice(0, 7);
   return (
-    <div className="containter p-5">
-      <h2>Syllabus for {subject}</h2>
-      <div dangerouslySetInnerHTML={{ __html: syllabus }}></div>
+    <div className="containter p-5 content">
+      <div className="previous-btn">
+        <Link to={`/department/${department}`}>
+          &lt; Back to Department {department}
+        </Link>
+      </div>
+      <div className="subject-content">
+        <h2 className="hello">Syllabus for {subject}</h2>
+        <Sem semm={semester} />
+
+        {/* <div dangerouslySetInnerHTML={{ __html: syllabus }}></div> */}
+      </div>
     </div>
   );
 };

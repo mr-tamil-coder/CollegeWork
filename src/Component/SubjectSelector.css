@@ -42,3 +42,24 @@
   height: auto;
   display: inline-block;
 }
+
+.content {
+  background: url("../Assets/College-Img/college.jpg") no-repeat;
+  background-size: cover;
+}
+.subject-content {
+  background: rgb(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  color: black;
+  padding: 20px;
+  border-radius: 15px;
+  font-size: bold;
+}
+.subject-content::selection {
+  background-color: red;
+  color: rgb(46, 74, 24);
+}
+
+.hello::selection{
+  color: green;
+}

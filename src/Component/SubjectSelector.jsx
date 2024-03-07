@@ -6,24 +6,43 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./SubjectSelector.css";
 
 const SubjectSelector = () => {
-  const [regulation, setRegulation] = useState("");
-  const [semester, setSemester] = useState("");
+  const [regulation, setRegulation] = useState(
+    localStorage.getItem("regulation") || ""
+  );
+  const [semester, setSemester] = useState(
+    localStorage.getItem("semester") || ""
+  );
   const [selectedSubjects, setSelectedSubjects] = useState([]);
   const [showResults, setShowResults] = useState(false);
 
   const { department: departmentParam } = useParams();
 
   useEffect(() => {
-    // Load subjects when regulation and semester are selected
-    if (regulation && semester) {
-      const departmentSubjects = getDepartmentSubjects();
-      setSelectedSubjects(departmentSubjects[regulation][semester] || []);
+    // Retrieve selected subjects from local storage when component mounts
+    const storedSubjects = JSON.parse(localStorage.getItem("selectedSubjects"));
+    if (storedSubjects) {
+      setSelectedSubjects(storedSubjects);
+      setShowResults(true);
     }
-  }, [regulation, semester]);
+  }, []);
 
   const handleSemesterChange = (event) => {
-    setSemester(event.target.value);
+    const selectedSemester = event.target.value;
+    setSemester(selectedSemester);
+    localStorage.setItem("semester", selectedSemester);
+
     setShowResults(false); // Hide results when semester changes
+  };
+
+  const handleSubmit = () => {
+    const departmentSubjects = getDepartmentSubjects();
+    const subjects = departmentSubjects[regulation][semester] || [];
+    setSelectedSubjects(subjects);
+
+    // Store selected subjects in local storage
+    localStorage.setItem("selectedSubjects", JSON.stringify(subjects));
+
+    setShowResults(true);
   };
 
   const getDepartmentSubjects = () => {
@@ -37,18 +56,19 @@ const SubjectSelector = () => {
         return {};
     }
   };
-
-  const handleSubmit = () => {
-    setShowResults(true);
+  const handleOptions = (event) => {
+    setRegulation(event.target.value);
+    localStorage.setItem("regulation", event.target.value);
   };
 
   return (
     <Container className="subject-selector-container">
+      <h5>Current Department: {departmentParam}</h5>
       <label className="select-label">Select Regulation:</label>
       <select
         value={regulation}
         className="select-input"
-        onChange={(event) => setRegulation(event.target.value)}
+        onChange={handleOptions}
       >
         <option value="">Select Regulation</option>
         <option value="2019">2019</option>
@@ -74,6 +94,7 @@ const SubjectSelector = () => {
       <Button onClick={handleSubmit}>Submit</Button>
       <br />
       <br />
+
       {showResults && (
         <>
           <h3 className="subject-header">Subjects With Code :</h3>
@@ -89,7 +110,9 @@ const SubjectSelector = () => {
                 <tr key={index}>
                   <td>{subject.code}</td>
                   <td>
-                    <a href={`/syllabus/${subject.code}${regulation}`} target="_blank">
+                    <a
+                      href={`/syllabus/${departmentParam}/sem${semester}/${subject.code}${regulation}`}
+                    >
                       {subject.name}
                     </a>
                   </td>

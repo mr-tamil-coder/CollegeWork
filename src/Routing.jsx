@@ -10,9 +10,8 @@ const Routing = () => {
         <Routes>
           <Route path="/" element={<Header />} />
           <Route path="/department" element={<SubjectSelector />} />
-
           <Route path="/department/:department" element={<SubjectSelector />} />
-          <Route path="/syllabus/:subjectCode" element={<Testing />} />
+          <Route path="/syllabus/:department/:semester/:subjectCode" element={<Testing />} />
         </Routes>
       </div>
     </Router>
