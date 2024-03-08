@@ -391,12 +391,10 @@ import Sem from "./Syllabus/CseSyllabus/Sem";
 const Testing = () => {
   const { subjectCode, department, semester } = useParams();
 
-  console.log("he");
   console.log(useParams());
 
-  var syllabus = syllabusData[subjectCode];
-  syllabus = <Sem semm={semester} />;
-
+  // var syllabus = syllabusData[subjectCode];
+  
   const subject = subjectCode.slice(0, 7);
   return (
     <div className="containter p-5 content">

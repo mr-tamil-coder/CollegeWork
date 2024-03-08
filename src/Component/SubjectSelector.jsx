@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import cseSubjects from "./Dept/CseSubjects";
 import { useParams } from "react-router-dom";
 import { Table, Container, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./SubjectSelector.css";
-
+import cseSubjects from "./Dept/CseSubjects";
+import Testing from "./testing";
 const SubjectSelector = () => {
   const [regulation, setRegulation] = useState(
     localStorage.getItem("regulation") || ""
@@ -120,6 +120,7 @@ const SubjectSelector = () => {
               ))}
             </tbody>
           </Table>
+          {/* <Testing  subjectName={subject.name}/> */}
         </>
       )}
     </Container>
