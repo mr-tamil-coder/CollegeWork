@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import SubjectSelector from "./Component/SubjectSelector";
+import {SubjectSelector} from "./Component/SubjectSelector";
 import Testing from "./Component/testing";
 import Header from "./Component/Header/Header";
 const Routing = () => {

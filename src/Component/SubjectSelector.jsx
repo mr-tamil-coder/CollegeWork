@@ -5,6 +5,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./SubjectSelector.css";
 import cseSubjects from "./Dept/CseSubjects";
 import Testing from "./testing";
+function handleSubjectClick(subname){
+  console.log(subname);
+}
 const SubjectSelector = () => {
   const [regulation, setRegulation] = useState(
     localStorage.getItem("regulation") || ""
@@ -60,6 +63,8 @@ const SubjectSelector = () => {
     setRegulation(event.target.value);
     localStorage.setItem("regulation", event.target.value);
   };
+ 
+ 
 
   return (
     <Container className="subject-selector-container">
@@ -94,7 +99,7 @@ const SubjectSelector = () => {
       <Button onClick={handleSubmit}>Submit</Button>
       <br />
       <br />
-
+ 
       {showResults && (
         <>
           <h3 className="subject-header">Subjects With Code :</h3>
@@ -112,6 +117,11 @@ const SubjectSelector = () => {
                   <td>
                     <a
                       href={`/syllabus/${departmentParam}/sem${semester}/${subject.code}${regulation}`}
+                      onClick={() => {
+  console.log('Clicked');
+  handleSubjectClick(subject.name);
+}}
+
                     >
                       {subject.name}
                     </a>
@@ -127,4 +137,4 @@ const SubjectSelector = () => {
   );
 };
 
-export default SubjectSelector;
+export {SubjectSelector , handleSubjectClick};

@@ -3,7 +3,7 @@
       { "handle": "filesystem" },
       { "src": "/department", "dest": "/department" },
       { "src": "/department/:department", "dest": "/department/:department" },
-      { "src": "/syllabus/:subjectCode", "dest": "/syllabus/:subjectCode" },
+      { "src": "/syllabus/:department/:semester/:subjectCode", "dest": "/syllabus/:department/:semester/:subjectCode" },
       { "src": ".*", "dest": "/" }
     ]
   }

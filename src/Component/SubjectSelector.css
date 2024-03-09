@@ -1,3 +1,9 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .subject-selector-container {
   margin: 20px;
 }
@@ -63,3 +69,20 @@
 .hello::selection{
   color: green;
 }
+.previous-btn{
+  background-color: rgb(212, 206, 206);
+  display:inline-block;
+  padding: 10px 30px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  margin: 10px 0px;
+  cursor: pointer;
+
+}
+.link-style {
+  color: rgb(25, 24, 29); /* For example, change the color to blue */
+  text-decoration: none; /* Remove default underline */
+}
+
+

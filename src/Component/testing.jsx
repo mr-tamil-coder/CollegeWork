@@ -388,18 +388,21 @@ Demonstration on:
   //
 };
 import Sem from "./Syllabus/CseSyllabus/Sem";
+import { handleSubjectClick } from "./SubjectSelector";
 const Testing = () => {
   const { subjectCode, department, semester } = useParams();
 
   console.log(useParams());
 
   // var syllabus = syllabusData[subjectCode];
-  
+
+  handleSubjectClick();
+
   const subject = subjectCode.slice(0, 7);
   return (
     <div className="containter p-5 content">
       <div className="previous-btn">
-        <Link to={`/department/${department}`}>
+        <Link to={`/department/${department}`} className="link-style">
           &lt; Back to Department {department}
         </Link>
       </div>
