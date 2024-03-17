@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Nav, Button, Dropdown } from "react-bootstrap";
-
+import Home from "../Home"
 const Header = () => {
   return (
     <>
@@ -27,6 +27,9 @@ const Header = () => {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+
+
+      <Home />
     </>
   );
 };

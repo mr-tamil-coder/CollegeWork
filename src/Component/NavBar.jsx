@@ -11,8 +11,9 @@ import jceBanner from "../Assets/College-Img/jce-logo.png";
 import "./SubjectSelector.css"
 function NavBar() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
+          <Navbar expand="lg" className="bg-body-tertiary">
+
         {/* Left-aligned logo */}
         <Navbar.Brand href="#" className="banner">
      
@@ -35,8 +36,9 @@ function NavBar() {
             <Nav.Link href="#about">About Us</Nav.Link>
           </Nav>
         </Navbar.Collapse>
+        </Navbar>
+
       </Container>
-    </Navbar>
   );
 }
 

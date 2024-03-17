@@ -3,9 +3,9 @@ import { useParams } from "react-router-dom";
 import { Table, Container, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./SubjectSelector.css";
-import cseSubjects from "./Dept/CseSubjects";
+import cseSubjects from "./Dept/Subjects/CseSubjects";
 import Testing from "./testing";
-function handleSubjectClick(subname){
+function handleSubjectClick(subname) {
   console.log(subname);
 }
 const SubjectSelector = () => {
@@ -63,43 +63,61 @@ const SubjectSelector = () => {
     setRegulation(event.target.value);
     localStorage.setItem("regulation", event.target.value);
   };
- 
- 
 
   return (
     <Container className="subject-selector-container">
-      <h5>Current Department: {departmentParam}</h5>
-      <label className="select-label">Select Regulation:</label>
-      <select
-        value={regulation}
-        className="select-input"
-        onChange={handleOptions}
-      >
-        <option value="">Select Regulation</option>
-        <option value="2019">2019</option>
-        <option value="2021">2021</option>
-      </select>
+      <h5>
+        Current Department:{" "}
+        <span className="capitalize">{departmentParam}</span>{" "}
+      </h5>
+      <div className="form-group row">
+        <label htmlFor="regulationSelect" className="col-sm-2 col-form-label">
+          Select Regulation:
+        </label>
+        <div className="col-sm-8">
+          <div className="input-group">
+            <select
+              id="regulationSelect"
+              className="form-select"
+              value={regulation}
+              onChange={handleOptions}
+            >
+              <option value="">Select Regulation</option>
+              <option value="2019">2019</option>
+              <option value="2021">2021</option>
+            </select>
+          </div>
+        </div>
+      </div>
       <br />
-      <label className="select-label">Select Semester:</label>
-      <select
-        value={semester}
-        className="select-input"
-        onChange={handleSemesterChange}
-        disabled={!regulation}
-      >
-        <option value="">Select Semester</option>
-        {[...Array(8)].map((_, index) => (
-          <option key={index + 1} value={index + 1}>
-            {index + 1}
-          </option>
-        ))}
-      </select>
+      <div className="form-group row">
+        <label htmlFor="semesterSelect" className="col-sm-2 col-form-label">
+          Select Semester:
+        </label>
+        <div className="col-sm-8">
+          <div className="input-group">
+            <select
+              id="semesterSelect"
+              className="form-select"
+              value={semester}
+              onChange={handleSemesterChange}
+              disabled={!regulation}
+            >
+              <option value="">Select Semester</option>
+              {[...Array(8)].map((_, index) => (
+                <option key={index + 1} value={index + 1}>
+                  {index + 1}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+      </div>
       <br />
       <br />
       <Button onClick={handleSubmit}>Submit</Button>
       <br />
       <br />
- 
       {showResults && (
         <>
           <h3 className="subject-header">Subjects With Code :</h3>
@@ -118,10 +136,8 @@ const SubjectSelector = () => {
                     <a
                       href={`/syllabus/${departmentParam}/sem${semester}/${subject.code}${regulation}`}
                       onClick={() => {
-  console.log('Clicked');
-  handleSubjectClick(subject.name);
-}}
-
+                        console.log("Clicked");
+                      }}
                     >
                       {subject.name}
                     </a>
@@ -137,4 +153,4 @@ const SubjectSelector = () => {
   );
 };
 
-export {SubjectSelector , handleSubjectClick};
+export { SubjectSelector, handleSubjectClick };

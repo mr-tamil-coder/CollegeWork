@@ -1,4 +1,5 @@
 import React from "react";
+import Sem1Data from "./Sem1";
 import Sem3Data from "./Sem3";
 import Sem4Data from "./Sem4";
 import { useParams } from "react-router-dom";
@@ -9,7 +10,9 @@ const Sem = ({ semm }) => {
   console.log("i am here"+semm);
   if (semm === "sem1") {
     // Handle sem1 data
-    return <Sem1Data />;
+    return <div dangerouslySetInnerHTML={{ __html: Sem1Data[subjectCode] }} />;
+
+ 
 } else if (semm === "sem2") {
     // Handle sem2 data
     return <Sem2Data />;

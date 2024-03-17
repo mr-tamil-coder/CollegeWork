@@ -1,4 +1,4 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -6,18 +6,6 @@
 
 .subject-selector-container {
   margin: 20px;
-}
-
-.select-label {
-  font-size: 16px;
-  margin-right: 10px;
-}
-
-.select-input {
-  width: 200px;
-  height: 30px;
-  font-size: 14px;
-  margin-bottom: 10px;
 }
 
 .subject-header {
@@ -66,23 +54,41 @@
   color: rgb(46, 74, 24);
 }
 
-.hello::selection{
+.hello::selection {
   color: green;
 }
-.previous-btn{
+.previous-btn {
   background-color: rgb(212, 206, 206);
-  display:inline-block;
+  display: inline-block;
   padding: 10px 30px;
   border-radius: 6px;
   border: none;
   outline: none;
   margin: 10px 0px;
   cursor: pointer;
-
 }
 .link-style {
   color: rgb(25, 24, 29); /* For example, change the color to blue */
   text-decoration: none; /* Remove default underline */
 }
 
+/* department */
+.capitalize {
+  text-transform: capitalize;
+}
 
+.select-label {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.select-input {
+  width: 80%;
+  height: 30px;
+  padding: 18px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  outline: none;
+  margin: none;
+  
+}
