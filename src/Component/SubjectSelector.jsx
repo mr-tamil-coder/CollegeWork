@@ -9,12 +9,14 @@ function handleSubjectClick(subname) {
   console.log(subname);
 }
 const SubjectSelector = () => {
-  const [regulation, setRegulation] = useState(
-    localStorage.getItem("regulation") || ""
-  );
-  const [semester, setSemester] = useState(
-    localStorage.getItem("semester") || ""
-  );
+  // const [regulation, setRegulation] = useState(
+  //   localStorage.getItem("regulation") || ""
+  // );
+  // const [semester, setSemester] = useState(
+  //   localStorage.getItem("semester") || ""
+  // );
+  const [regulation, setRegulation] = useState("");
+  const [semester, setSemester] = useState("");
   const [value, setValue] = useState("");
   const [selectedSubjects, setSelectedSubjects] = useState([]);
   const [showResults, setShowResults] = useState(false);
@@ -28,11 +30,10 @@ const SubjectSelector = () => {
       setSelectedSubjects(storedSubjects);
       setShowResults(true);
     }
-    if(departmentParam=="cse"){
+    if (departmentParam == "cse") {
       let departmentName = "Computer Science and Engineering"; // Set departmentName for 'cse'
-      setValue(departmentName); 
+      setValue(departmentName);
     }
-
   }, []);
 
   const handleSemesterChange = (event) => {
@@ -53,8 +54,8 @@ const SubjectSelector = () => {
 
     setShowResults(true);
   };
- 
- console.log(departmentParam);
+
+  console.log(departmentParam);
   const getDepartmentSubjects = () => {
     let departmentName = ""; // Initialize departmentName variable
     switch (departmentParam) {
@@ -65,7 +66,7 @@ const SubjectSelector = () => {
       case "ece":
         departmentName = "Electronics and Communication Engineering"; // Set departmentName for 'ece'
         setValue(departmentName); // Update the value here
-        // return eceSubjects;  Assuming eceSubjects is imported
+      // return eceSubjects;  Assuming eceSubjects is imported
       // Add cases for other departments
       default:
         departmentName = ""; // Set default departmentName if necessary
