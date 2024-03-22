@@ -84,7 +84,7 @@ const SubjectSelector = () => {
             >
               <option value="">Select Regulation</option>
               <option value="2019">2019</option>
-              <option value="2021">2021</option>
+              <option value="2021" disabled>2021</option>
             </select>
           </div>
         </div>

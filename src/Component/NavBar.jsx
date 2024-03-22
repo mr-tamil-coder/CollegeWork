@@ -29,7 +29,7 @@ function NavBar() {
             navbarScroll
           >
             {/* Right-aligned navigation links */}
-            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
             {/* Department Choose with dropdown */}
           
             <Nav.Link href="#contact">Contact Us</Nav.Link>

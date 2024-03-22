@@ -92,3 +92,10 @@
   margin: none;
   
 }
+
+/* Home */
+.curriculum{
+  background: rgb(255, 255, 255, 0.3);
+  padding: 10px;
+  backdrop-filter: blur(10px);
+}

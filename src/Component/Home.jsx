@@ -16,14 +16,14 @@ const Home = () => {
           height: "100vh",
         }}
       >
-        <h1 className="curriculum text-center bg-primary text-white">COURSE CURRICULUM</h1>
+        <h1 className="curriculum text-center ">COURSE CURRICULUM</h1>
       </div>
       <div className="container mt-5">
         <h2 className="text-center mb-4">Select your department</h2>
         <div className="row justify-content-start">
           <div className="col-md-3 col-sm-6 mb-4">
             <div className="box text-center">
-              <a href="./department/cse">
+              <a href="./department/cse" className="text-white">
                 <img
                   src={Cse}
                   alt="CSE"

@@ -48,7 +48,10 @@ const cseSubjects = {
     ],
     5: [
       { code: "JCS1501", name: "Internet Programming" },
-      { code: "JCS1502", name: "Object Oriented Analysis and Design (Integrated)" },
+      {
+        code: "JCS1502",
+        name: "Object Oriented Analysis and Design (Integrated)",
+      },
       { code: "JCS1503", name: "Theory of Computation" },
       { code: "Professional Elective - I", name: "Professional Elective - I" },
       { code: "Open Elective-II", name: "Open Elective-II" },
@@ -60,9 +63,9 @@ const cseSubjects = {
       { code: "JCS1601", name: "Compiler Design" },
       { code: "JIT1602", name: "Artificial Intelligence" },
       { code: "JCS1603", name: "Cryptography and Network Security" },
-      { code: "Professional Elective - II", name: "Professional Elective - II" },
-      { code: "Professional Elective - III", name: "Professional Elective - III" },
-      { code: "Open Elective - III", name: "Open Elective - III" },
+      { code: "Professional-Elective-II", name: "Professional Elective - II" },
+      { code: "Professional-Elective-III", name: "Professional-Elective-III" },
+      { code: "Open-Elective-III", name: "Open Elective - III" },
       { code: "JPT1002", name: "Technical Skills and Aptitude-II" },
       { code: "JCS1611", name: "Compiler Design Laboratory" },
       { code: "JCS1621", name: "Mini Project" },
@@ -71,11 +74,14 @@ const cseSubjects = {
     7: [
       { code: "JCS1701", name: "Big Data Analytics" },
       { code: "JCS1702", name: "Cloud Computing (Integrated)" },
-      { code: "Professional Elective - IV", name: "Professional Elective - IV" },
-      { code: "Open Elective -IV", name: "Open Elective -IV" },
+      { code: "Professional-Elective-IV", name: "Professional-Elective-IV" },
+      { code: "Open-Elective-IV", name: "Open Elective -IV" },
       { code: "JNC1361", name: "Essence of Indian Traditional Knowledge" },
       { code: "JBA1711", name: "Entrepreneurship for Engineers" },
-      { code: "NMS0001", name: "Professional Readiness for Innovation, Employability and Entrepreneurship" },
+      {
+        code: "NMS0001",
+        name: "Professional Readiness for Innovation, Employability and Entrepreneurship",
+      },
       { code: "JCS1711", name: "Big Data Analytics Laboratory" },
       { code: "JCS1731", name: "Project work – Phase I" },
     ],
@@ -100,9 +106,8 @@ const cseSubjects = {
       { code: "JGE1211", name: "Python Programming Laboratory" },
       { code: "JEC1214", name: "Digital Logic Fundamentals Laboratory" },
     ],
-    2: [
-      { code: "JEC1214", name: "Digital Logic Fundamentals Laboratory" },
-    ]
-}}
+    2: [{ code: "JEC1214", name: "Digital Logic Fundamentals Laboratory" }],
+  },
+};
 
 export default cseSubjects;

@@ -4,12 +4,12 @@ import Home from "../Home"
 const Header = () => {
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="lg">
+      {/* <Navbar bg="dark" variant="dark" expand="lg">
         <Navbar.Brand href="#">Your College Name</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarNav" />
         <Navbar.Collapse id="navbarNav">
           <Nav className="ml-auto">
-            <Nav.Link href="#">Home</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="#">About</Nav.Link>
             <Nav.Link href="#">Courses</Nav.Link>
             <Nav.Link href="#">Contact</Nav.Link>
@@ -26,7 +26,7 @@ const Header = () => {
             </Dropdown>
           </Nav>
         </Navbar.Collapse>
-      </Navbar>
+      </Navbar> */}
 
 
       <Home />
