@@ -90,12 +90,15 @@
   margin-bottom: 10px;
   outline: none;
   margin: none;
-  
 }
 
 /* Home */
-.curriculum{
+.curriculum {
   background: rgb(255, 255, 255, 0.3);
   padding: 10px;
   backdrop-filter: blur(10px);
+}
+
+.box a {
+  text-decoration: none;
 }

@@ -15,6 +15,7 @@ const SubjectSelector = () => {
   const [semester, setSemester] = useState(
     localStorage.getItem("semester") || ""
   );
+  const [value, setValue] = useState("");
   const [selectedSubjects, setSelectedSubjects] = useState([]);
   const [showResults, setShowResults] = useState(false);
 
@@ -27,12 +28,17 @@ const SubjectSelector = () => {
       setSelectedSubjects(storedSubjects);
       setShowResults(true);
     }
+    if(departmentParam=="cse"){
+      let departmentName = "Computer Science and Engineering"; // Set departmentName for 'cse'
+      setValue(departmentName); 
+    }
+
   }, []);
 
   const handleSemesterChange = (event) => {
     const selectedSemester = event.target.value;
     setSemester(selectedSemester);
-    localStorage.setItem("semester", selectedSemester);
+    // localStorage.setItem("semester", selectedSemester);
 
     setShowResults(false); // Hide results when semester changes
   };
@@ -43,22 +49,31 @@ const SubjectSelector = () => {
     setSelectedSubjects(subjects);
 
     // Store selected subjects in local storage
-    localStorage.setItem("selectedSubjects", JSON.stringify(subjects));
+    // localStorage.setItem("selectedSubjects", JSON.stringify(subjects));
 
     setShowResults(true);
   };
-
+ 
+ console.log(departmentParam);
   const getDepartmentSubjects = () => {
+    let departmentName = ""; // Initialize departmentName variable
     switch (departmentParam) {
       case "cse":
+        departmentName = "Computer Science and Engineering"; // Set departmentName for 'cse'
+        setValue(departmentName); // Update the value here
         return cseSubjects;
       case "ece":
-        return cseSubjects;
+        departmentName = "Electronics and Communication Engineering"; // Set departmentName for 'ece'
+        setValue(departmentName); // Update the value here
+        // return eceSubjects;  Assuming eceSubjects is imported
       // Add cases for other departments
       default:
+        departmentName = ""; // Set default departmentName if necessary
+        setValue(departmentName); // Update the value here
         return {};
     }
   };
+
   const handleOptions = (event) => {
     setRegulation(event.target.value);
     localStorage.setItem("regulation", event.target.value);
@@ -67,8 +82,7 @@ const SubjectSelector = () => {
   return (
     <Container className="subject-selector-container">
       <h5>
-        Current Department:{" "}
-        <span className="capitalize">{departmentParam}</span>{" "}
+        Current Department: <span className="capitalize">{value}</span>{" "}
       </h5>
       <div className="form-group row">
         <label htmlFor="regulationSelect" className="col-sm-2 col-form-label">
@@ -84,7 +98,9 @@ const SubjectSelector = () => {
             >
               <option value="">Select Regulation</option>
               <option value="2019">2019</option>
-              <option value="2021" disabled>2021</option>
+              <option value="2021" disabled>
+                2021
+              </option>
             </select>
           </div>
         </div>

@@ -11,19 +11,21 @@ const Testing = () => {
   const { subjectCode, department, semester } = useParams();
 
   console.log(useParams());
- 
 
-
-  
   // var syllabus = syllabusData[subjectCode];
 
   const subject = subjectCode.slice(0, 7);
   return (
     <div className="containter p-5 content">
       {/* <HandleSubjectClick /> */}
-      <div className="previous-btn">
+      <div className="previous-btn btn-danger">
         <Link to={`/department/${department}`} className="link-style">
-          &lt; Back to Department {department}
+          Back
+        </Link>
+      </div>
+      <div className="previous-btn mx-2">
+        <Link to={`/`} className="link-style">
+          Home
         </Link>
       </div>
       <div className="subject-content">

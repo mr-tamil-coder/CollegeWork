@@ -2,7 +2,7 @@ import React from "react";
 import "../App.css";
 import Cse from "../Assets/College-Img/cse.jpg";
 import collegeImg from "../Assets/College-Img/college.jpg";
-
+import "./SubjectSelector.css"
 const Home = () => {
   return (
     <div className="container-fluid p-0">
@@ -29,7 +29,9 @@ const Home = () => {
                   alt="CSE"
                   className="department-image img-fluid"
                 />
-                <h4>CSE</h4>
+                <h4>
+                  <b>CSE</b>
+                </h4>
               </a>
             </div>
           </div>
