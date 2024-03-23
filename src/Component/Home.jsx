@@ -3,7 +3,16 @@ import "../App.css";
 import Cse from "../Assets/College-Img/cse.jpg";
 import collegeImg from "../Assets/College-Img/college.jpg";
 import "./SubjectSelector.css"
+import { useEffect } from "react";
 const Home = () => {
+  useEffect(() => {
+    // Remove item from localStorage
+    localStorage.removeItem('semester');
+    localStorage.removeItem('selectedSubjects');
+
+    localStorage.removeItem('regulation');
+
+  }, []);
   return (
     <div className="container-fluid p-0">
       <div

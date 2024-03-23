@@ -9,14 +9,14 @@ function handleSubjectClick(subname) {
   console.log(subname);
 }
 const SubjectSelector = () => {
-  // const [regulation, setRegulation] = useState(
-  //   localStorage.getItem("regulation") || ""
-  // );
-  // const [semester, setSemester] = useState(
-  //   localStorage.getItem("semester") || ""
-  // );
-  const [regulation, setRegulation] = useState("");
-  const [semester, setSemester] = useState("");
+  const [regulation, setRegulation] = useState(
+    localStorage.getItem("regulation") || ""
+  );
+  const [semester, setSemester] = useState(
+    localStorage.getItem("semester") || ""
+  );
+  // const [regulation, setRegulation] = useState("");
+  // const [semester, setSemester] = useState("");
   const [value, setValue] = useState("");
   const [selectedSubjects, setSelectedSubjects] = useState([]);
   const [showResults, setShowResults] = useState(false);
@@ -39,7 +39,7 @@ const SubjectSelector = () => {
   const handleSemesterChange = (event) => {
     const selectedSemester = event.target.value;
     setSemester(selectedSemester);
-    // localStorage.setItem("semester", selectedSemester);
+    localStorage.setItem("semester", selectedSemester);
 
     setShowResults(false); // Hide results when semester changes
   };
@@ -50,7 +50,7 @@ const SubjectSelector = () => {
     setSelectedSubjects(subjects);
 
     // Store selected subjects in local storage
-    // localStorage.setItem("selectedSubjects", JSON.stringify(subjects));
+    localStorage.setItem("selectedSubjects", JSON.stringify(subjects));
 
     setShowResults(true);
   };
