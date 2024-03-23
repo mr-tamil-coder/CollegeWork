@@ -1,6 +1,8 @@
 import React from 'react'
  const sem1Data = {
         JHS11212019: `
+        
+        <h5>JHS1121- Communicative English and Soft Skills I </h5>
          <div  className="content bg-primary">
          <strong style="color: black">UNIT I Basic Grammar I and Reading for information:</strong> 
             - Parts of speech - Sentence patterns – Tenses - Wh- questions - Yes/no questions - Countable 

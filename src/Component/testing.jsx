@@ -16,7 +16,7 @@ const Testing = () => {
 
   const subject = subjectCode.slice(0, 7);
   return (
-    <div className="containter p-5 content">
+    <div className="containter p-2 content">
       {/* <HandleSubjectClick /> */}
       <div className="previous-btn btn-danger">
         <Link to={`/department/${department}`} className="link-style">

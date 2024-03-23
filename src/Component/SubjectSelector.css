@@ -97,8 +97,24 @@
   background: rgb(255, 255, 255, 0.3);
   padding: 10px;
   backdrop-filter: blur(10px);
+  font-size: 150px;
+  font-weight: bold;
 }
 
 .box a {
   text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    background-color: red;
+    color: red; /* Change background color to red for mobile devices */
+  }
+  .curriculum{
+    font-size: 34px !important;
+  }
+  .bg-body-tertiary {
+    height: 90px;
+  }
+  
 }

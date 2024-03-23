@@ -53,7 +53,7 @@ const cseSubjects = {
         name: "Object Oriented Analysis and Design (Integrated)",
       },
       { code: "JCS1503", name: "Theory of Computation" },
-      { code: "Professional Elective - I", name: "Professional Elective - I" },
+      { code: "Professional-Elective-I", name: "Professional Elective - I" },
       { code: "Open Elective-II", name: "Open Elective-II" },
       { code: "JPT1002", name: "Technical Skills and Aptitude-I" },
       { code: "JHS1511", name: "Professional Communication" },
